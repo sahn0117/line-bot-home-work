@@ -307,7 +307,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/gallery/9Lq1uov',
+                        thumbnail_image_url='https://res.klook.com/image/upload/c_fill,w_1265,h_712/q_80/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/iawlxdydqqokp34sctmv.webp',
                         title='許願池!!',
                         text='您是否曾希望我們的店鋪能夠提供某些特定商品？現在，您有機會讓您的願望成真！快來參與我們的「許願池」活動吧！',
                         actions=[

@@ -307,7 +307,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic02.jpg',
+                        thumbnail_image_url='https://imgur.com/gallery/9Lq1uov',
                         title='許願池!!',
                         text='您是否曾希望我們的店鋪能夠提供某些特定商品？現在，您有機會讓您的願望成真！快來參與我們的「許願池」活動吧！',
                         actions=[
@@ -325,25 +325,6 @@ def handle_message(event):
                             )
                         ]
                     ),
-                  CarouselColumn(
-                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic02.jpg',
-                        title='測試輪播模板訊息-2',
-                        text='您可以在此輸入您要描述的文字。',
-                        actions=[
-                            MessageTemplateAction(
-                                label='測試按鈕-3',
-                                text='您剛剛點擊了【測試按鈕-3】'
-                            ),
-                            URITemplateAction(
-                                label='網頁示範-雲端學園',
-                                uri='https://elearning2.wzu.edu.tw/home.php'
-                            ),
-                            MessageTemplateAction(
-                                label='測試按鈕-4',
-                                text='您剛剛點擊了【測試按鈕-4】'
-                            )
-                        ]
-                    )
                 ]
             )
         )
@@ -729,7 +710,7 @@ def handle_message(event):
         return 0
 ###############################################################################
     else:
-        response='我不太了解您的意思，建議您透過選單與我互動唷！'
+        response='收到!!此消息會由小編紀錄下來喔'
         line_bot_api.reply_message(event.reply_token,TextSendMessage(response))
         return 0
         

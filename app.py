@@ -151,14 +151,14 @@ def handle_message(event):
     elif user_message.find('AI客服') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
         
         res_message = TextSendMessage(
-            text='歡迎您!這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊，若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接。感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！')        
+            text='歡迎您! \n 這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。 \n 需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊 \n 若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！ \n 如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接 \n 感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！')        
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0
 ###############################################################################
         # user_message='文字訊息'
     elif user_message.find('真人客服') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
-        res_message = TextSendMessage(text='客服在線時間:周一~周六 10:00 A.M~17:00 P.m、若沒有及時回復代表真人客服忙線中，煩請耐心等待回復。')
+        res_message = TextSendMessage(text='客服在線時間: \n 周一~周六 10:00 A.M~17:00 P.m \n 若沒有及時回復代表真人客服忙線中，煩請耐心等待回復。')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
@@ -166,7 +166,7 @@ def handle_message(event):
     elif user_message.find('模型清單') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
         res_message = TextSendMessage(
-            text='###(備註:未滿500不出貨呦)### HOBBY模型店之模型清單連結: https:// hobbyShop.com.tw/modledm.dfa1fdg6er2fdf3g1er 。     歡迎貴客選購，本店歡迎使用線上購物~ ')
+            text='⚠️未滿500不出貨呦 \n HOBBY模型店之模型清單連結: \n https:// hobbyShop.com.tw/modledm.dfa1fdg6er2fdf3g1er \n 歡迎貴客選購，本店歡迎使用線上購物~ ')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
@@ -174,7 +174,7 @@ def handle_message(event):
     elif user_message.find('工具清單') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
         res_message = TextSendMessage(
-            text='(備註:未滿500不出貨呦)\n HOBBY模型店之工具清單連結: https:// hobbyShop.com.tw/modletooldm.rtg2fdgdg6e3asg 。     歡迎貴客選購，本店歡迎使用線上購物~')
+            text='⚠️未滿500不出貨呦 \n HOBBY模型店之模型清單連結: https:// hobbyShop.com.tw/modletooldm.rtg2fdgdg6e3asg \n 歡迎貴客選購，本店歡迎使用線上購物~')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
@@ -182,7 +182,7 @@ def handle_message(event):
     elif user_message.find('優惠活動') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
         res_message = TextSendMessage(
-            text='親愛的顧客，好消息！ 我們現在推出【限時優惠】活動，只持續本周末！活動內容：精選商品低至五折，包括最熱門的萬代模型、田宮工具等！、首次購物的顧客可享受額外95折優惠、凡購物滿$1000即享免費宅配到府服務!詳細內容請參考本店網址: https:// hobbyShop.com.tw。 注意事項：1. 所有特價商品數量有限，售完即止。2. 本活動不可與其他優惠同時使用。3. 本店保留最終解釋權及在法律允許範圍內對活動條款進行修改的權利。')
+            text='親愛的顧客，好消息！ \n 我們現在推出【限時優惠】活動，只持續本周末！ \n 活動內容：精選商品低至五折🤛🤛 \n 包括最熱門的萬代模型、田宮工具等❗ \n 首次購物的顧客可享受額外95折優惠、凡購物滿$1000即享免費宅配到府服務❗ \n 詳細內容請參考本店網址: https:// hobbyShop.com.tw \n ⚠️注意事項：1. 所有特價商品數量有限，售完即止。2. 本活動不可與其他優惠同時使用。3. 本店保留最終解釋權及在法律允許範圍內對活動條款進行修改的權利。')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
@@ -321,7 +321,7 @@ def handle_message(event):
                             ),
                             MessageTemplateAction(
                                 label='輸入格式示範',
-                                text='商品:XXX，連結:https:// hobbyShop.com.tw'
+                                text='商品:XXX \n 連結:https:// hobbyShop.com.tw'
                             )
                         ]
                     ),

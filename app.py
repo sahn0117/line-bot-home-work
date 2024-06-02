@@ -303,11 +303,11 @@ def handle_message(event):
     elif user_message.find('許願池活動') != -1:         #判斷用戶使否傳來"輪播模板訊息"關鍵字，若為是則觸發本區段。 
         
         res_message = TemplateSendMessage(
-            alt_text='本訊息為【輪播模板訊息】',
+            alt_text='本訊息為【許願池活動】',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/gallery/9Lq1uov',
+                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic02.jpg',
                         title='許願池活動',
                         text='您是否曾希望我們的店鋪能夠提供某些特定商品？現在，您有機會讓您的願望成真！快來參與我們的「許願池」活動吧！',
                         actions=[

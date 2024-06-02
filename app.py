@@ -151,19 +151,38 @@ def handle_message(event):
     elif user_message.find('AI客服') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
         
         res_message = TextSendMessage(
-            text='''
-            歡迎您!這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。
-            需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊，若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！
-            如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接。感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！
-            '''
-            )        
+            text='歡迎您!這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊，若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接。感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！')        
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0
 ###############################################################################
         # user_message='文字訊息'
-        elif user_message.find('AI客服') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+    elif user_message.find('真人客服') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
-        res_message = TextSendMessage(text='歡迎您!這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊，若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接。感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！')
+        res_message = TextSendMessage(text='客服在線時間:周一~周六 10:00 A.M~17:00 P.m、若沒有及時回復代表真人客服忙線中，煩請耐心等待回復。')
+        line_bot_api.reply_message(event.reply_token, res_message)
+        return 0
+###############################################################################
+        # user_message='文字訊息'
+    elif user_message.find('模型清單') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+
+        res_message = TextSendMessage(
+            text='HOBBY模型店之模型清單連結: https:// hobbyShop.com.tw/modledm.dfa1fdg6er2fdf3g1er。歡迎貴客選購，本店歡迎使用線上購物~  (備註:未滿500不出貨呦)')
+        line_bot_api.reply_message(event.reply_token, res_message)
+        return 0
+###############################################################################
+        # user_message='文字訊息'
+    elif user_message.find('工具清單') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+
+        res_message = TextSendMessage(
+            text='HOBBY模型店之工具清單連結: https:// hobbyShop.com.tw/modletooldm.rtg2fdgdg6e3asg歡迎貴客選購，本店歡迎使用線上購物~  (備註:未滿500不出貨呦)')
+        line_bot_api.reply_message(event.reply_token, res_message)
+        return 0
+###############################################################################
+        # user_message='文字訊息'
+    elif user_message.find('優惠活動') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+
+        res_message = TextSendMessage(
+            text='親愛的顧客，好消息！ 我們現在推出【限時優惠】活動，只持續本周末！活動內容：精選商品低至五折，包括最熱門的萬代模型、田宮工具等！、首次購物的顧客可享受額外95折優惠、凡購物滿$1000即享免費宅配到府服務!詳細內容請參考本店網址: https:// hobbyShop.com.tw。 注意事項：1. 所有特價商品數量有限，售完即止。2. 本活動不可與其他優惠同時使用。3. 本店保留最終解釋權及在法律允許範圍內對活動條款進行修改的權利。')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
@@ -281,54 +300,31 @@ def handle_message(event):
     
 ###############################################################################
         #user_message='輪播模板訊息'
-    elif user_message.find('輪播模板訊息') != -1:         #判斷用戶使否傳來"輪播模板訊息"關鍵字，若為是則觸發本區段。 
+    elif user_message.find('許願池活動') != -1:         #判斷用戶使否傳來"輪播模板訊息"關鍵字，若為是則觸發本區段。 
         
         res_message = TemplateSendMessage(
             alt_text='本訊息為【輪播模板訊息】',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic04.jpg',
-                        title='測試輪播模板訊息-1',
-                        text='您可以在此輸入您要描述的文字。',
+                        thumbnail_image_url='https://imgur.com/gallery/9Lq1uov',
+                        title='許願池活動',
+                        text='您是否曾希望我們的店鋪能夠提供某些特定商品？現在，您有機會讓您的願望成真！快來參與我們的「許願池」活動吧！',
                         actions=[
                             MessageTemplateAction(
-                                label='測試按鈕-1',
-                                text='您剛剛點擊了【測試按鈕-1】'
+                                label='許願模型類商品',
+                                text='以下請輸入您想要的商品以及連結'
                             ),
                             MessageTemplateAction(
-                                label='測試按鈕-2',
-                                text='您剛剛點擊了【測試按鈕-2】'
+                                label='許願工具類商品',
+                                text='以下請輸入您想要的商品以及連結'
                             ),
                             URITemplateAction(
-                                label='網頁示範-校務資訊系統',
-                                uri='https://sso.wzu.edu.tw/Portal/login.htm'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://www.nups.ntnu.edu.tw/upfiles/univ-expo/%E5%8D%97%E9%83%A8/%E9%AB%98%E9%9B%84%E5%B8%82/%E6%8A%80%E5%B0%88%E6%A0%A1%E9%99%A2/%E6%96%87%E8%97%BB/%E6%96%87%E8%97%BB-pic02.jpg',
-                        title='測試輪播模板訊息-2',
-                        text='您可以在此輸入您要描述的文字。',
-                        actions=[
-                            MessageTemplateAction(
-                                label='測試按鈕-3',
-                                text='您剛剛點擊了【測試按鈕-3】'
-                            ),
-                            URITemplateAction(
-                                label='網頁示範-雲端學園',
-                                uri='https://elearning2.wzu.edu.tw/home.php'
-                            ),
-                            MessageTemplateAction(
-                                label='測試按鈕-4',
-                                text='您剛剛點擊了【測試按鈕-4】'
+                                label='輸入格式示範',
+                                uri='商品:XXX，連結:https:// hobbyShop.com.tw'
                             )
                         ]
                     )
-                ]
-            )
-        )
-
         line_bot_api.reply_message(event.reply_token,res_message)
 
         return 0

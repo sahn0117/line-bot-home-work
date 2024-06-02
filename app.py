@@ -16,11 +16,11 @@ import random
 app = Flask(__name__)
 
 
-line_bot_api = LineBotApi('')
+line_bot_api = LineBotApi('irls/WjLt0CaZdR8sjH02YcMQ5xaUfwDdAP6ZDAaS6Fcrdm/IQ649QES3jOcw+MEzwKhLNfEMjO8YmRypTInKte5tlM0Z1H00mm7eGVusFXRbvlbCpVhVKpnby3hyB+YJktQQr+XZicCEpc/HTwuZwdB04t89/1O/w1cDnyilFU=')
 
-handler = WebhookHandler('')
+handler = WebhookHandler('b52864ae77a3c4600be09ec5a5412ebb')
 
-line_bot_api.push_message('', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
+line_bot_api.push_message('U2c86509e20f6503faca9b6772775a908', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -148,13 +148,26 @@ def handle_message(event):
         
 ###############################################################################
         #user_message='文字訊息'
-    elif user_message.find('文字訊息') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+    elif user_message.find('AI客服') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
         
-        res_message = TextSendMessage(text='歡迎使用文藻E點通，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
+        res_message = TextSendMessage(
+            text='''
+            歡迎您!這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。
+            需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊，若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！
+            如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接。感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！
+            '''
+            )        
         line_bot_api.reply_message(event.reply_token,res_message)
-        return 0   
-        
+        return 0
 ###############################################################################
+        # user_message='文字訊息'
+        elif user_message.find('AI客服') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
+
+        res_message = TextSendMessage(text='歡迎您!這裡是HOBBY模型店的全天候客服小助手，我隨時在線為您提供幫助。需要查詢商品資訊、了解促銷活動，請點選小方塊獲取最新資訊，若有任何其他購買或是商品上的疑問？請隨時發問，我在這裡為您解答！如果您需要與真人客服聯繫，請輸入或點選[人工客服]，系統將在真人客服在線期間為您轉接。感謝您選擇HOBBY模型店，讓我們為您提供最佳的購物體驗！')
+        line_bot_api.reply_message(event.reply_token, res_message)
+        return 0
+###############################################################################
+
     elif user_message.find('圖片訊息') != -1 :         #判斷用戶使否傳來"圖片訊息"關鍵字，若為是則觸發本區段。  
         
         res_message = ImageSendMessage(

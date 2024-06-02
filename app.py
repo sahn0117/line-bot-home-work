@@ -166,7 +166,7 @@ def handle_message(event):
     elif user_message.find('模型清單') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
         res_message = TextSendMessage(
-            text='(備註:未滿500不出貨呦) HOBBY模型店之模型清單連結: https:// hobbyShop.com.tw/modledm.dfa1fdg6er2fdf3g1er 。    歡迎貴客選購，本店歡迎使用線上購物~ ')
+            text='###(備註:未滿500不出貨呦)### HOBBY模型店之模型清單連結: https:// hobbyShop.com.tw/modledm.dfa1fdg6er2fdf3g1er 。     歡迎貴客選購，本店歡迎使用線上購物~ ')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
@@ -174,7 +174,7 @@ def handle_message(event):
     elif user_message.find('工具清單') != -1:  # 判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
 
         res_message = TextSendMessage(
-            text='(備註:未滿500不出貨呦)HOBBY模型店之工具清單連結: https:// hobbyShop.com.tw/modletooldm.rtg2fdgdg6e3asg 。    歡迎貴客選購，本店歡迎使用線上購物~')
+            text='(備註:未滿500不出貨呦)\n HOBBY模型店之工具清單連結: https:// hobbyShop.com.tw/modletooldm.rtg2fdgdg6e3asg 。     歡迎貴客選購，本店歡迎使用線上購物~')
         line_bot_api.reply_message(event.reply_token, res_message)
         return 0
 ###############################################################################
